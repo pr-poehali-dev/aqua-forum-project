@@ -220,7 +220,7 @@ export default function Index() {
               <Card>
                 <CardContent className="p-4 text-center">
                   <Icon name="MessageSquare" size={24} className="mx-auto text-primary mb-2" />
-                  <div className="text-2xl font-bold">8,932</div>
+                  <div className="text-2xl font-bold mx-0 my-0 py-0 px-0">0</div>
                   <div className="text-sm text-muted-foreground">Сообщений</div>
                 </CardContent>
               </Card>
