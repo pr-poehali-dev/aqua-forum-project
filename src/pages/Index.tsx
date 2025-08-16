@@ -213,7 +213,7 @@ export default function Index() {
               <Card>
                 <CardContent className="p-4 text-center">
                   <Icon name="Users" size={24} className="mx-auto text-primary mb-2" />
-                  <div className="text-2xl font-bold">1,247</div>
+                  <div className="text-2xl font-bold">0</div>
                   <div className="text-sm text-muted-foreground">Игроков</div>
                 </CardContent>
               </Card>
