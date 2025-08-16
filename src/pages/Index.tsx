@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 import Icon from '@/components/ui/icon';
+import { Link } from 'react-router-dom';
 
 type UserRole = 'АДМИН' | 'МОДЕРАТОР' | 'ИГРОК';
 
@@ -135,21 +136,29 @@ export default function Index() {
             </div>
             
             <nav className="hidden md:flex items-center space-x-6">
-              <Button variant="ghost" className="text-foreground hover:text-primary">
-                <Icon name="Home" size={16} className="mr-2" />
-                Главная
-              </Button>
-              <Button variant="ghost" className="text-foreground hover:text-primary">
-                <Icon name="Info" size={16} className="mr-2" />
-                О нас
-              </Button>
-              <Button variant="ghost" className="text-foreground hover:text-primary">
-                <Icon name="HelpCircle" size={16} className="mr-2" />
-                Поддержка
-              </Button>
-              <Button variant="ghost" className="text-foreground hover:text-primary">
-                <Icon name="ExternalLink" size={16} className="mr-2" />
-                Наш сайт
+              <Link to="/">
+                <Button variant="ghost" className="text-foreground hover:text-primary">
+                  <Icon name="Home" size={16} className="mr-2" />
+                  Главная
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button variant="ghost" className="text-foreground hover:text-primary">
+                  <Icon name="Info" size={16} className="mr-2" />
+                  О нас
+                </Button>
+              </Link>
+              <Link to="/support">
+                <Button variant="ghost" className="text-foreground hover:text-primary">
+                  <Icon name="HelpCircle" size={16} className="mr-2" />
+                  Поддержка
+                </Button>
+              </Link>
+              <Button variant="ghost" className="text-foreground hover:text-primary" asChild>
+                <a href="https://aquaverse.ru" target="_blank" rel="noopener noreferrer">
+                  <Icon name="ExternalLink" size={16} className="mr-2" />
+                  Наш сайт
+                </a>
               </Button>
             </nav>
 
@@ -243,9 +252,11 @@ export default function Index() {
                   <div key={post.id} className="border border-border rounded-lg p-4 hover:bg-accent/5 transition-colors">
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
-                        <h3 className="font-semibold text-lg hover:text-primary cursor-pointer transition-colors">
-                          {post.title}
-                        </h3>
+                        <Link to="/rules">
+                          <h3 className="font-semibold text-lg hover:text-primary cursor-pointer transition-colors">
+                            {post.title}
+                          </h3>
+                        </Link>
                         <p className="text-muted-foreground mt-1 line-clamp-2">
                           {post.content}
                         </p>
